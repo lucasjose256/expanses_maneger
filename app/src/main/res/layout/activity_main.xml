@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+
         android:id="@+id/balance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,19 +43,56 @@
     android:layout_below="@+id/balance"
     android:layout_marginStart="10dp"
     android:layout_marginTop="15dp"
+    app:cardCornerRadius="12dp"
+    android:id="@+id/dashboard"
 
     ><LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
     >
     <LinearLayout
-        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_weight="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$30"
+            android:textAllCaps="true"
+            android:textSize="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/budget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Budget"
+            android:textSize="20dp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="0.5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$3jjjkkjkjj"
+            android:text="$300"
             android:textSize="28dp"
             android:textAllCaps="true"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,10 +100,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <TextView
+            android:id="@+id/expanse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$3jjjkkjkjj"
-            android:textSize="28dp"
+            android:text="EXPENSES"
+            android:textSize="20dp"
             android:textAllCaps="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,11 +112,32 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-
 </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
 
+<TextView
+    android:id="@+id/recycle_view_title"
+    android:text="Transactions"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/dashboard"/>
 
 
-  </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/recycle_view_title"
+        android:layout_marginTop="0dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="2dp" />
+
+
+</RelativeLayout>
